@@ -494,14 +494,6 @@ export default function quotelist() {
 
     
     </div>
-
-      <div>
-
-
-
-      </div>
-      
-     
     </Layout>
   );
 }
