@@ -11,7 +11,7 @@ const booking = () => {
       <div className='flex flex-col p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl '>
        
      
-      <div className='px-2 h-28'>
+      <div className='h-28'>
      
       <Progress/>
       <ProgressButton />
@@ -25,6 +25,8 @@ const booking = () => {
 <div className="bg-amber-800 h-[44rem]">
     fkgjkfjg-kjfdkjf
 </div>
+
+
          
      
 
