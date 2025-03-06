@@ -154,10 +154,22 @@ export default function quotelist() {
     <Layout>
       <div className='p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl'>
     
-    <div className='h-2/12'>
-      <h1 className="text-xl font-semibold border-l-amber-900 border-l-8 pl-2.5">Quote List</h1>
-      <div className='flex justify-end'><button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer'>Fillter <i className="ri-equalizer-3-line"></i> </button></div>
+    <div className='h-fit flex flex-col justify-between'>
+      <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Quote List</h1>
+      <div className='flex items-end flex-col'>
+      <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit'>Fillter <i className="ri-equalizer-3-line"></i> </button>
+      
+      <div className='flex gap-0.5 my-2'>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-left-s-line"></i></button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>1</button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>2</button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>3</button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-right-s-line"></i></button>
+      </div>
+      </div>
     </div>
+
+
      <Modal isOpen={isModalOpen} onClose={closeModal} >
         <div className='h-full w-full relative'>
 
@@ -299,7 +311,7 @@ export default function quotelist() {
    
    
     
-        <div className="overflow-hidden overflow-y-auto h-10/12 scroll-smooth scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200">
+        <div className="overflow-hidden overflow-y-auto h-auto scroll-smooth scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 custom-scrollbar">
           <table className="min-w-full border-collapse border border-gray-200 ">
             <thead>
               <tr className="bg-gray-100 border-b border-gray-200">
@@ -368,7 +380,7 @@ export default function quotelist() {
           <div className='h-full w-full relative'>
 
           <div className='absolute inset-0 flex items-center justify-center flex-col'>
-<div className=' w-[34rem]'>
+<div className=' w-[54rem]'>
           <div className='flex w-full justify-end mb-4'>  <button onClick={closeModal2}  className='bg-white h-10 w-10 rounded-full cursor-pointer'><i className="ri-arrow-go-back-line"></i></button></div>
 
           <div className='bg-white p-6 rounded-md flex flex-col gap-2'>

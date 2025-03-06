@@ -23,3 +23,36 @@
 body {
   font-family: "Sora", sans-serif;
 }
+
+
+
+.custom-scrollbar {
+  overflow: hidden;
+  overflow-y: auto;
+  height: 83.333%;
+  scroll-behavior: smooth;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #e5e7eb; 
+}
+
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3b82f6; 
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; 
+}
+
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #2563eb; 
+}
+
+
+.custom-scrollbar:hover::-webkit-scrollbar-track {
+  background-color: #d1d5db; 
+}
