@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Layout from "../../components/layout";
 import Modal from "../../components/modal";
 import 'remixicon/fonts/remixicon.css'
+import Link from 'next/link';
 
 const exporttaskmanagement = () => {
 
@@ -42,6 +43,19 @@ const exporttaskmanagement = () => {
 
           const openModal2 = () => setIsModalOpen2(true);
           const closeModal2 = () => setIsModalOpen2(false);
+
+          const [isModalOpen3, setIsModalOpen3] = useState(false);
+
+          const openModal3 = () => setIsModalOpen3(true);
+          const closeModal3 = () => setIsModalOpen3(false);
+
+          const [isModalOpen4, setIsModalOpen4] = useState(false);
+
+          const openModal4 = () => setIsModalOpen4(true);
+          const closeModal4 = () => setIsModalOpen4(false);
+
+
+
   
 
     return (
@@ -255,19 +269,19 @@ const exporttaskmanagement = () => {
           <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 flex space-x-2 justify-end">
             <button
               className="text-gray-800 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer bg-blue-500/10"
-              onClick={() => alert(`Viewing: ${item.taskId}`)}
+              onClick={openModal2}
             >
               <i className="ri-eye-line"></i>
             </button>
+            <Link
+    href="/exporttaskmanagement/exporttask"
+     className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer flex items-center justify-center"
+  >
+    <i className="ri-edit-line"></i>
+  </Link>
             <button
               className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer"
-              onClick={() => alert(`Editing: ${item.taskId}`)}
-            >
-              <i className="ri-edit-line"></i>
-            </button>
-            <button
-              className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer"
-              onClick={() => alert(`Booking: ${item.taskId}`)}
+              onClick={openModal3}
             >
               <i className="ri-book-line"></i>
             </button>
@@ -279,7 +293,7 @@ const exporttaskmanagement = () => {
             </button>
             <button
               className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
-              onClick={() => alert(`Approving Mail: ${item.taskId}`)}
+              onClick={openModal4}
             >
               Approve Mail
             </button>
@@ -314,12 +328,203 @@ const exporttaskmanagement = () => {
               </div>
             </div>
 
-            {/* Repeat the grid for other sections */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+              <div className="border p-2 border-gray-300">
+                <h1 className="text-sm font-bold text-neutral-700">Quotation ID</h1>
+                <h1 className="text-sm mt-1 text-neutral-700">Q12345</h1>
+              </div>
+            </div>
+
+            
           </div>
         </div>
       </div>
     </div>
   </Modal>
+
+  <Modal isOpen={isModalOpen3} onClose={closeModal3}>
+  <div className="h-full w-full relative">
+      <div className="absolute inset-0 flex items-center justify-center flex-col">
+        <div className="w-[34rem]">
+          <div className="flex w-full justify-end mb-4">
+            <button
+              onClick={closeModal3}
+              className="bg-white h-10 w-10 rounded-full cursor-pointer"
+            >
+              <i className="ri-arrow-go-back-line"></i>
+            </button>
+          </div>
+
+          <div className="bg-white p-6 rounded-md flex flex-col gap-2">
+
+          <h1 className='font-semibold'>Assign To</h1>  
+
+          <div>
+                <input
+                  type="text"
+                  id="name"
+                  maxLength={50}
+                  className="duration-500 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 p-2.5 outline-none"
+                  placeholder="Enter test name"
+                 
+                  required
+                />
+              
+              </div>
+
+
+
+
+          
+           
+         
+          <div className="flex w-full justify-end">
+            <button
+              onClick={closeModal4}
+              className="text-white py-2 px-4 bg-blue-600 rounded-full cursor-pointer"
+            >
+              Approve
+            </button>
+          </div>
+
+           </div>
+        </div>
+      </div>
+    </div>
+  </Modal>
+
+  <Modal isOpen={isModalOpen4} onClose={closeModal4}>
+  <div className="h-full w-full relative">
+      <div className="absolute inset-0 flex items-center justify-center flex-col">
+        <div className="w-[34rem]">
+          <div className="flex w-full justify-end mb-4">
+            <button
+              onClick={closeModal4}
+              className="bg-white h-10 w-10 rounded-full cursor-pointer"
+            >
+              <i className="ri-arrow-go-back-line"></i>
+            </button>
+          </div>
+
+          <div className="bg-white p-6 rounded-md flex flex-col gap-2">
+
+          <h1 className='font-semibold'>Approve Mail</h1>  
+
+          <div>
+                <label
+                  for="first_name"
+                  className="block mb-2 text-sm font-semibold text-gray-800"
+                >
+                  From
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  maxLength={50}
+                  className="duration-500 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 p-2.5 outline-none"
+                  placeholder="Enter test name"
+                 
+                  required
+                />
+              
+              </div>
+
+
+              <div>
+                <label
+                  for="first_name"
+                  className="block mb-2 text-sm font-semibold text-gray-800"
+                >
+                  To
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  maxLength={50}
+                  className="duration-500 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 p-2.5 outline-none"
+                  placeholder="Enter test name"
+                 
+                  required
+                />
+              
+              </div>
+
+              <div>
+                <label
+                  for="first_name"
+                  className="block mb-2 text-sm font-semibold text-gray-800"
+                >
+                  Mail
+                </label>
+                <textarea
+                  type="text"
+                  id="name"
+                  maxLength={50}
+                  className="duration-500 h-34 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5 outline-none"
+                  placeholder="Enter test name"
+                 
+                  required
+                />
+              
+              </div>
+          
+           
+         
+          <div className="flex w-full justify-end">
+            <button
+              onClick={closeModal4}
+              className="text-white py-2 px-4 bg-blue-600 rounded-full cursor-pointer"
+            >
+              Approve
+            </button>
+          </div>
+
+           </div>
+        </div>
+      </div>
+    </div>
+  </Modal>
+
+
+
+
 </div>
 
     
