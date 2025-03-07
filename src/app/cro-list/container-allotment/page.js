@@ -11,7 +11,7 @@ const ContainerAllotment = () => {
       <div className='flex flex-col p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl '>
        
      
-      <div className='h-28'>
+      <div className='h-32 flex flex-col justify-between'>
      
       <Progress/>
       <ProgressButton />

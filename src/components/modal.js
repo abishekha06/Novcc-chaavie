@@ -1,6 +1,7 @@
 // components/Modal.js
 import { useEffect } from 'react';
 
+
 export default function Modal({ isOpen, onClose, children }) {
   // Close modal on pressing the Escape key
   useEffect(() => {
@@ -22,14 +23,15 @@ export default function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
   return (
+
     <div
 
-    className=''
+    className='w-full'
+
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%',
         height: '100%',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         zIndex: 1000,
@@ -43,5 +45,7 @@ export default function Modal({ isOpen, onClose, children }) {
         {children}
       </div>
     </div>
+  
+
   );
 }

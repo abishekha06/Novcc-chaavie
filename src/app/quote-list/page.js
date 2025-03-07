@@ -1,13 +1,15 @@
 "use client";
-
 import { useState } from 'react';
 import Layout from '../../components/layout';
-import 'remixicon/fonts/remixicon.css'
 import Modal from '../../components/modal';
+import { TiFilter } from "react-icons/ti";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { RiArrowGoBackFill } from "react-icons/ri";
 
 export default function quotelist() {
    
-        // Dummy data
+
         const dummyData = [
           {
             id: 1,
@@ -157,14 +159,16 @@ export default function quotelist() {
     <div className='h-fit flex flex-col justify-between'>
       <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Quote List</h1>
       <div className='flex items-end flex-col'>
-      <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit'>Fillter <i className="ri-equalizer-3-line"></i> </button>
+      <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'><h1>Filter </h1><TiFilter /> </button>
       
       <div className='flex gap-0.5 my-2'>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-left-s-line"></i></button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowBack /></button>
         <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>1</button>
         <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>2</button>
         <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>3</button>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-right-s-line"></i></button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>4</button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>5</button>
+        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowForward /></button>
       </div>
       </div>
     </div>
@@ -175,7 +179,7 @@ export default function quotelist() {
 
 <div className='absolute top-32 right-14'>
 
-<div className='flex justify-end'>  <button onClick={closeModal}  className='bg-white h-10 w-10 rounded-full cursor-pointer'><i className="ri-arrow-go-back-line"></i></button></div>
+<div className='flex justify-end'>  <button onClick={closeModal}  className='bg-white h-10 w-10 rounded-full cursor-pointer flex justify-center items-center'><RiArrowGoBackFill /></button></div>
 
 <div className='bg-white rounded-xl my-4 p-4 flex gap-2'>
 <div>
@@ -295,7 +299,7 @@ export default function quotelist() {
 
 <div className='flex justify-end'>
     <button className='bg-white text-sm px-4 py-2 rounded-full mr-2 hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
-        Cancel
+        Reset
     </button>
     <button className='bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
         Search
@@ -379,9 +383,9 @@ export default function quotelist() {
           <Modal isOpen={isModalOpen2} onClose={closeModal2}>
           <div className='h-full w-full relative'>
 
-          <div className='absolute inset-0 flex items-center justify-center flex-col'>
-<div className=' w-[54rem]'>
-          <div className='flex w-full justify-end mb-4'>  <button onClick={closeModal2}  className='bg-white h-10 w-10 rounded-full cursor-pointer'><i className="ri-arrow-go-back-line"></i></button></div>
+          <div className='absolute inset-0 flex items-center justify-center'>
+          <div className=' w-[54rem]'>
+          <div className='flex w-full justify-end mb-4'>  <button onClick={closeModal2}  className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'><RiArrowGoBackFill /></button></div>
 
           <div className='bg-white p-6 rounded-md flex flex-col gap-2'>
 

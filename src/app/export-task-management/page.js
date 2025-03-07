@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Layout from "../../components/layout";
 import Modal from "../../components/modal";
-import 'remixicon/fonts/remixicon.css'
 import Link from 'next/link';
 
 const exporttaskmanagement = () => {
