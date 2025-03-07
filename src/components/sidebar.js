@@ -7,7 +7,7 @@ const Sidebar = () => {
 
   return (
     <div className="w-64 bg-blue-950 text-white p-4">
-      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
+      <h1 className="text-lg font-medium mb-6 bg-white/10 p-2 rounded-md">Export</h1>
       <nav>
         <ul>
           <li className="mb-3 text-sm">

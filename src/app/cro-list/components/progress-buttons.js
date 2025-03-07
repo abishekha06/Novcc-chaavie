@@ -1,36 +1,59 @@
-"use client"; // Mark this component as a Client Component
+"use client";
 
+import React from 'react'; // Import React
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import {
+  FaBook,
+  FaBox,
+  FaTruckLoading,
+  FaShip,
+  FaFileAlt,
+  FaFileInvoiceDollar,
+  FaList,
+  FaClipboardList,
+} from 'react-icons/fa';
 
 const ProgressButton = () => {
   const pathname = usePathname();
   const buttonNames = [
-    { name: "Booking", path: "/cro-list/booking" },
-    { name: "Container Allotment", path: "/cro-list/container-allotment" },
-    { name: "Stuffing", path: "/cro-list/stuffing" },
-    { name: "Port IN", path: "/cro-list/port-in" },
-    { name: "Bill of Lading", path: "/cro-list/bill-of-lading" },
-    { name: "Export Invoice", path: "/cro-list/export-invoice" },
-    { name: "Load List", path: "/cro-list/load-list" },
-    { name: "TDR", path: "/cro-list/tdr" }
+    { name: "Booking", path: "/cro-list/booking", icon: <FaBook /> },
+    { name: "Container Allotment", path: "/cro-list/container-allotment", icon: <FaBox /> },
+    { name: "Stuffing", path: "/cro-list/stuffing", icon: <FaTruckLoading /> },
+    { name: "Port IN", path: "/cro-list/port-in", icon: <FaShip /> },
+    { name: "Bill of Lading", path: "/cro-list/bill-of-lading", icon: <FaFileAlt /> },
+    { name: "Export Invoice", path: "/cro-list/export-invoice", icon: <FaFileInvoiceDollar /> },
+    { name: "Load List", path: "/cro-list/load-list", icon: <FaList /> },
+    { name: "TDR", path: "/cro-list/tdr", icon: <FaClipboardList /> },
   ];
 
   return (
-    <div className="w-full h-14 flex border-2 border-blue-500 rounded-full p-1">
+    <div className="w-full h-14 flex border-2 border-blue-400 rounded-full p-1">
       {buttonNames.map((button, index) => {
         const isActive = pathname === button.path;
         return (
           <Link
             key={index}
             href={button.path}
-            className={`flex-1 text-xs px-2 text-center font-normal transition duration-500 ease-in-out border-r border-white last:border-r-0 rounded-full cursor-pointer flex items-center justify-center ${
+            className={`flex-1 text-xs px-2  font-normal transition duration-500 ease-in-out border-r border-white last:border-r-0 rounded-full cursor-pointer flex items-center justify-center gap-2 ${
               isActive
                 ? 'bg-blue-500 text-white'
                 : 'bg-white text-black hover:bg-blue-500/20'
             }`}
           >
-            {button.name}
+            <div className='flex items-center justify-center gap-2'>
+            <div>
+            {React.cloneElement(button.icon, {
+              className: `${
+                isActive ? 'text-white' : 'text-gray-400'
+              }`,
+            })}
+            </div>
+              <h1 className='whitespace-nowrap'>{button.name}</h1>
+            </div>
+
+
+
           </Link>
         );
       })}

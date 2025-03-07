@@ -158,6 +158,8 @@ export default function quotelist() {
     
     <div className='h-fit flex flex-col justify-between'>
       <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Quote List</h1>
+
+
       <div className='flex items-end flex-col'>
       <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'><h1>Filter </h1><TiFilter /> </button>
       
@@ -171,6 +173,8 @@ export default function quotelist() {
         <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowForward /></button>
       </div>
       </div>
+
+
     </div>
 
 
@@ -181,7 +185,8 @@ export default function quotelist() {
 
 <div className='flex justify-end'>  <button onClick={closeModal}  className='bg-white h-10 w-10 rounded-full cursor-pointer flex justify-center items-center'><RiArrowGoBackFill /></button></div>
 
-<div className='bg-white rounded-xl my-4 p-4 flex gap-2'>
+<div className='bg-white rounded-xl my-4 p-4 grid grid-cols-3 lg:grid-cols-6 gap-2 '>
+
 <div>
                 <label
                   for="first_name"
@@ -293,15 +298,11 @@ export default function quotelist() {
               </div>
 </div>
 
-
-
-
-
 <div className='flex justify-end'>
-    <button className='bg-white text-sm px-4 py-2 rounded-full mr-2 hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+    <button className='bg-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg mr-2 hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
         Reset
     </button>
-    <button className='bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
         Search
     </button>
 </div>
@@ -391,19 +392,7 @@ export default function quotelist() {
 
 
 
-          <div className='grid grid-cols-2 gap-4'> 
 
-              <div className='border p-2 border-gray-300'>
-                    <h1 className='text-sm font-bold text-neutral-700'>Quotation ID</h1>
-                    <h1 className='text-sm mt-1 text-neutral-700'>Q12345</h1>
-             </div>
-
-             <div className='border p-2 border-gray-300'>
-                    <h1 className='text-sm font-bold text-neutral-700'>Quotation ID</h1>
-                    <h1 className='text-sm mt-1 text-neutral-700'>Q12345</h1>
-             </div>
-
-         </div>
 
          <div className='grid grid-cols-2 gap-4'> 
 
@@ -467,10 +456,7 @@ export default function quotelist() {
       <h1 className='text-sm mt-1 text-neutral-700'>Q12345</h1>
 </div>
 
-<div className='border p-2 border-gray-300'>
-      <h1 className='text-sm font-bold text-neutral-700'>Quotation ID</h1>
-      <h1 className='text-sm mt-1 text-neutral-700'>Q12345</h1>
-</div>
+
 
 </div>
 

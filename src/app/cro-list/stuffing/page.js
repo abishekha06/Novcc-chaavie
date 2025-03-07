@@ -3,7 +3,7 @@ import Progress from "../../cro-list/components/progress";
 import ProgressButton from "../../cro-list/components/progress-buttons";
 
 
-const ContainerAllotment = () => {
+const stuffing = () => {
   return (
     <Layout>
 
@@ -203,23 +203,7 @@ Allot Container
 
   </div>
 
-
-      </div>
-
-
-<div>
-
-
-table
-</div>
-
-
-
-
-
-
-
-      <div className="flex justify-end mt-4">
+  <div className="flex justify-end mt-4">
 <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
 Save
 </button>
@@ -228,10 +212,13 @@ Submit
 </button>
 </div>
 
+
+      </div>
+
       </div>
       </div>
     </Layout>
   );
 };
 
-export default ContainerAllotment;
+export default stuffing;

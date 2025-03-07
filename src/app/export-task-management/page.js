@@ -3,6 +3,13 @@ import { useState } from 'react';
 import Layout from "../../components/layout";
 import Modal from "../../components/modal";
 import Link from 'next/link';
+import { TiFilter } from "react-icons/ti";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { MdModeEdit } from "react-icons/md";
+import { CgEyeAlt } from "react-icons/cg";
+import { MdAssignmentAdd } from "react-icons/md";
 
 const exporttaskmanagement = () => {
 
@@ -63,17 +70,25 @@ const exporttaskmanagement = () => {
     
     <div className='h-fit flex flex-col justify-between'>
       <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Export Task Management</h1>
-      <div className='flex items-end flex-col'>
-      <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit'>Fillter <i className="ri-equalizer-3-line"></i> </button>
       
-      <div className='flex gap-0.5 my-2'>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-left-s-line"></i></button>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>1</button>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>2</button>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>3</button>
-        <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><i className="ri-arrow-right-s-line"></i></button>
-      </div>
-      </div>
+      
+            <div className='flex items-end flex-col'>
+            <button onClick={openModal}  className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'><h1>Filter </h1><TiFilter /> </button>
+            
+            <div className='flex gap-0.5 my-2'>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowBack /></button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>1</button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>2</button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>3</button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>4</button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'>5</button>
+              <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowForward /></button>
+            </div>
+            </div>
+
+    
+    
+    
     </div>
 
 
@@ -82,9 +97,10 @@ const exporttaskmanagement = () => {
 
 <div className='absolute top-32 right-14'>
 
-<div className='flex justify-end'>  <button onClick={closeModal}  className='bg-white h-10 w-10 rounded-full cursor-pointer'><i className="ri-arrow-go-back-line"></i></button></div>
+<div className='flex justify-end'>  <button onClick={closeModal}  className='bg-white h-10 w-10 rounded-full cursor-pointer flex justify-center items-center'><RiArrowGoBackFill /></button></div>
 
-<div className='bg-white rounded-xl my-4 p-4 flex gap-2'>
+<div className='bg-white rounded-xl my-4 p-4 grid grid-cols-3 lg:grid-cols-6 gap-2 '>
+
 <div>
                 <label
                   for="first_name"
@@ -201,10 +217,10 @@ const exporttaskmanagement = () => {
 
 
 <div className='flex justify-end'>
-    <button className='bg-white text-sm px-4 py-2 rounded-full mr-2 hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
-        Cancel
+    <button className='bg-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg mr-2 hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+        Reset
     </button>
-    <button className='bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-700 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
         Search
     </button>
 </div>
@@ -270,19 +286,19 @@ const exporttaskmanagement = () => {
               className="text-gray-800 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer bg-blue-500/10"
               onClick={openModal2}
             >
-              <i className="ri-eye-line"></i>
+              <CgEyeAlt />
             </button>
             <Link
     href="/export-task-management/export-task"
      className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer flex items-center justify-center"
   >
-    <i className="ri-edit-line"></i>
+    <MdModeEdit />
   </Link>
             <button
               className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer"
               onClick={openModal3}
             >
-              <i className="ri-book-line"></i>
+              <MdAssignmentAdd />
             </button>
 
 
@@ -315,9 +331,7 @@ const exporttaskmanagement = () => {
           <div className="flex w-full justify-end mb-4">
             <button
               onClick={closeModal2}
-              className="bg-white h-10 w-10 rounded-full cursor-pointer"
-            >
-              <i className="ri-arrow-go-back-line"></i>
+              className="bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center"><RiArrowGoBackFill />
             </button>
           </div>
 
@@ -391,9 +405,7 @@ const exporttaskmanagement = () => {
           <div className="flex w-full justify-end mb-4">
             <button
               onClick={closeModal3}
-              className="bg-white h-10 w-10 rounded-full cursor-pointer"
-            >
-              <i className="ri-arrow-go-back-line"></i>
+              className="bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center"><RiArrowGoBackFill />
             </button>
           </div>
 
@@ -442,9 +454,7 @@ const exporttaskmanagement = () => {
           <div className="flex w-full justify-end mb-4">
             <button
               onClick={closeModal4}
-              className="bg-white h-10 w-10 rounded-full cursor-pointer"
-            >
-              <i className="ri-arrow-go-back-line"></i>
+              className="bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center"><RiArrowGoBackFill />
             </button>
           </div>
 

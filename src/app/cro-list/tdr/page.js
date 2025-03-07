@@ -1,9 +1,55 @@
+"use client";
+
+import { useState } from 'react';
 import Layout from "../../../components/layout";
 import Progress from "../../cro-list/components/progress";
 import ProgressButton from "../../cro-list/components/progress-buttons";
 
 
-const ContainerAllotment = () => {
+
+
+const tdr = () => {
+
+    const [data, setData] = useState([
+        {
+          srNo: 1,
+          containerNo: 'ABC123',
+          size: '20ft',
+          loadPort: 'Port A',
+          dischargePort: 'Port B',
+          croNumber: 'CRO123',
+          billOfLadingNumber: 'BL123',
+          vesselSailed: false,
+        },
+        {
+          srNo: 2,
+          containerNo: 'XYZ456',
+          size: '40ft',
+          loadPort: 'Port C',
+          dischargePort: 'Port D',
+          croNumber: 'CRO456',
+          billOfLadingNumber: 'BL456',
+          vesselSailed: true,
+        },
+        {
+          srNo: 3,
+          containerNo: 'DEF789',
+          size: '20ft',
+          loadPort: 'Port E',
+          dischargePort: 'Port F',
+          croNumber: 'CRO789',
+          billOfLadingNumber: 'BL789',
+          vesselSailed: false,
+        },
+      ]);
+    
+      const handleCheckboxChange = (index) => {
+        const newData = [...data];
+        newData[index].vesselSailed = !newData[index].vesselSailed;
+        setData(newData);
+      };
+
+
   return (
     <Layout>
 
@@ -85,45 +131,12 @@ const ContainerAllotment = () => {
   </div>
 
 
-  <div >
-    <label
-      for="first_name"
-      className="block mb-2 text-sm font-semibold text-gray-800 mt-4"
-    >
-     Discharge Port
-    </label>
-    <input
-      type="text"
-      id="name"
-      maxLength={50}
-      className="duration-500 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 p-2.5 outline-none"
-      placeholder="Lorem"
-     
-      required
-    />
-  
-  </div>
+
 
 
   </div>
 
   <div>
-
-
-
-
-
-
-
-
-
-
- 
-
- 
-
- 
-
 
 
   <div>
@@ -163,63 +176,54 @@ const ContainerAllotment = () => {
     />
   
   </div>
+</div>
 
-  <div>
-    <label
-      for="first_name"
-      className="block mb-2 text-sm font-semibold text-gray-800 mt-4"
-    >
-     Ocean Freight
-    </label>
-    <input
-      type="text"
-      id="name"
-      maxLength={50}
-      className="duration-500 bg-gray-50 rounded-sm border focus:ring-1 border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full h-11 p-2.5 outline-none"
-      placeholder="Lorem"
-     
-      required
-    />
-  
+
   </div>
 
+  <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+  <div className="bg-white rounded-lg p-4">
 
- 
+  <table className="w-full border-collapse">
+  <thead>
+    <tr>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Sr No</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Container No</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Size</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Load Port</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Discharge Port</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">CRO Number</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Bill of Lading Number</th>
+      <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Vessel Sailed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.map((row, index) => (
+      <tr key={row.srNo} className="hover:bg-gray-50">
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.srNo}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.containerNo}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.size}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.loadPort}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.dischargePort}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.croNumber}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">{row.billOfLadingNumber}</td>
+        <td className="p-3 border-b border-gray-200 text-center text-xs">
+          <input
+            type="checkbox"
+            checked={row.vesselSailed}
+            onChange={() => handleCheckboxChange(index)}
+            className="form-checkbox h-4 w-4 text-blue-600"
+          />
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+</div>
+
+  </div>
 
   <div className="flex justify-end mt-4">
-
-
-
-
-<button className="bg-blue-500 text-white px-6 h-10 text-sm ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer">
-Allot Container
-</button>
-</div>
-
-
-
-  </div>
-
-
-  </div>
-
-
-      </div>
-
-
-<div>
-
-
-table
-</div>
-
-
-
-
-
-
-
-      <div className="flex justify-end mt-4">
 <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
 Save
 </button>
@@ -228,10 +232,13 @@ Submit
 </button>
 </div>
 
+
+      </div>
+
       </div>
       </div>
     </Layout>
   );
 };
 
-export default ContainerAllotment;
+export default tdr;
