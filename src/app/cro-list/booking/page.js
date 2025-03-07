@@ -1,6 +1,6 @@
 import Layout from "../../../components/layout";
-import Progress from "../components/progress";
-import ProgressButton from "../components/progressbuttons";
+import Progress from "../../cro-list/components/progress";
+import ProgressButton from "../../cro-list/components/progress-buttons";
 
 
 const booking = () => {

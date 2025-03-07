@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Layout from "../../components/layout";
 import Modal from "../../components/modal";
 import 'remixicon/fonts/remixicon.css'
+import Link from 'next/link';
 
 const crolist = () => {
 
@@ -259,18 +260,24 @@ const crolist = () => {
             >
               View CRO
             </button>
-            <button
-              className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
-              onClick={() => alert(`Viewing Bookings: ${item.bookingId}`)}
+
+
+
+            <Link
+              className="bg-blue-500/10 text-blue-600 px-3 py-1 rounded-sm hover:bg-blue-600/20 duration-200 cursor-pointer"
+              href="/cro-list/booking"
             >
               View Bookings
-            </button>
-            <button
-              className="bg-purple-500/10 text-purple-600 px-3 py-1 rounded-sm hover:bg-purple-600/20 duration-200 cursor-pointer"
-              onClick={() => alert(`Approving Bookings: ${item.bookingId}`)}
+            </Link>
+
+
+
+            <Link
+              className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
+              href="/cro-list/booking"
             >
               Approve Bookings
-            </button>
+            </Link>
           </td>
         </tr>
       ))}

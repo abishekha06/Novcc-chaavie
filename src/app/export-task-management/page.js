@@ -274,7 +274,7 @@ const exporttaskmanagement = () => {
               <i className="ri-eye-line"></i>
             </button>
             <Link
-    href="/exporttaskmanagement/exporttask"
+    href="/export-task-management/export-task"
      className="text-gray-800 bg-blue-500/10 px-2 rounded-sm hover:text-blue-800 duration-200 cursor-pointer flex items-center justify-center"
   >
     <i className="ri-edit-line"></i>
@@ -285,12 +285,18 @@ const exporttaskmanagement = () => {
             >
               <i className="ri-book-line"></i>
             </button>
-            <button
+
+
+
+            <Link
               className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
-              onClick={() => alert(`Generating CRO: ${item.taskId}`)}
+              href="/export-task-management/export-cro"
             >
               Generate CRO
-            </button>
+            </Link>
+
+
+
             <button
               className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
               onClick={openModal4}

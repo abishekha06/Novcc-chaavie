@@ -40,16 +40,16 @@ body {
 
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #3b82f6; 
+  background-color: #a0c5ff; 
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px; 
+  width: 6px;
 }
 
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: #2563eb; 
+  background-color: #6595fd; 
 }
 
 
