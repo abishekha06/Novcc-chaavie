@@ -70,7 +70,7 @@ const exportinvoice = () => {
 
           <div className="flex justify-end mt-4">
             <button className="bg-blue-500 text-white px-4 h-8 text-xs ml-3 rounded-md hover:bg-blue-600 transition-all duration-200 cursor-pointer flex justify-center items-center gap-3">
-              <GoPlus /> Allot Container
+              <GoPlus /> Add New
             </button>
           </div>
 
