@@ -212,14 +212,11 @@ const exporttaskmanagement = () => {
                   <div className="bg-white p-6 rounded-md flex flex-col gap-2">
                     <h1 className="font-semibold">Assign To</h1>
                     <InputField label="Assign To" id="assignTo" placeholder="Enter name" />
-                    <div className="flex w-full justify-end">
-                      <button
-                        onClick={closeModal3}
-                        className="text-white py-2 px-4 bg-blue-600 rounded-full cursor-pointer"
-                      >
-                        Approve
-                      </button>
-                    </div>
+                    <div className='flex justify-end mt-4'>
+                    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+                      Save
+                    </button>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -257,14 +254,11 @@ const exporttaskmanagement = () => {
                         required
                       />
                     </div>
-                    <div className="flex w-full justify-end">
-                      <button
-                        onClick={closeModal4}
-                        className="text-white py-2 px-4 bg-blue-600 rounded-full cursor-pointer"
-                      >
-                        Approve
-                      </button>
-                    </div>
+                    <div className='flex justify-end'>
+                    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
+                      Approve
+                    </button>
+                  </div>
                   </div>
                 </div>
               </div>

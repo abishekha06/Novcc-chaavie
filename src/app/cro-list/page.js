@@ -54,6 +54,10 @@ const CroList = () => {
   const openModal2 = () => setIsModalOpen2(true);
   const closeModal2 = () => setIsModalOpen2(false);
 
+  const [isModalOpen3, setIsModalOpen3] = useState(false);
+  const openModal3 = () => setIsModalOpen3(true);
+  const closeModal3 = () => setIsModalOpen3(false);
+
   return (
     <Layout>
       <div className='p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl'>
@@ -75,6 +79,7 @@ const CroList = () => {
           </div>
         </div>
 
+        {/* Filter Modal */}
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <div className='h-full w-full relative'>
             <div className='absolute top-32 right-14'>
@@ -103,6 +108,7 @@ const CroList = () => {
           </div>
         </Modal>
 
+        {/* Table */}
         <div className="overflow-hidden overflow-y-auto h-auto scroll-smooth scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 custom-scrollbar">
           <table className="min-w-full border-collapse border border-gray-200">
             <thead>
@@ -122,7 +128,7 @@ const CroList = () => {
                   <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">
                     <button
                       className="text-blue-600 hover:text-blue-800 duration-200 cursor-pointer"
-                      onClick={() => alert(`Viewing Bill of Lading: ${item.billOfLading}`)}
+                      onClick={openModal3} // Open Bill of Lading modal
                     >
                       {item.billOfLading}
                     </button>
@@ -156,6 +162,7 @@ const CroList = () => {
           </table>
         </div>
 
+        {/* View CRO Modal (Modal 2) */}
         <Modal isOpen={isModalOpen2} onClose={closeModal2}>
           <div className='h-full w-full relative'>
             <div className='absolute inset-0 flex items-center justify-center'>
@@ -175,6 +182,36 @@ const CroList = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </Modal>
+
+        {/* Bill of Lading Modal (Modal 3) */}
+        <Modal isOpen={isModalOpen3} onClose={closeModal3}>
+          <div className='h-full w-full relative'>
+            <div className='absolute inset-0 flex justify-center pt-10 '>
+     
+            <div className='flex pr-4'>
+                  <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
+                    <RiArrowGoBackFill />
+                  </button>
+                </div>
+
+              <div className='h-[90%] w-[30rem]  bg-white overflow-hidden '>
+
+           
+
+
+                <div className='h-full flex items-center justify-center'>
+                  <img
+                    src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    alt="Bill of Lading"
+                    className='max-w-full max-h-full'
+                  />
+                </div>
+
+
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import InputField from '../../components/input-field';
 
-const TaskList = () => {
+const ExportAdvanceList = () => {
   const dummyData = [
     {
       id: 1,
@@ -64,7 +64,7 @@ const TaskList = () => {
     <Layout>
       <div className='p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl'>
         <div className='h-fit flex flex-col justify-between'>
-          <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Task List</h1>
+          <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Export Advance List</h1>
           <div className='flex items-end flex-col'>
             <button onClick={openModal} className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
               <h1>Filter</h1><TiFilter />
@@ -145,7 +145,7 @@ const TaskList = () => {
                       Approve EAL
                     </button>
                     <button
-                      className="bg-purple-500/10 text-purple-600 px-3 py-1 rounded-sm hover:bg-purple-600/20 duration-200 cursor-pointer"
+                      className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
                       onClick={openModal4}
                     >
                       Approve Email
@@ -214,7 +214,7 @@ const TaskList = () => {
                 <div className='bg-white p-6 rounded-md flex flex-col gap-4'>
                   <h1 className="text-xl font-semibold">Approve Email</h1>
                   <div className='grid grid-cols-2 gap-4'>
-                    <InputField label="From" id="from" placeholder="Enter From" />
+                    <InputField label="From" id="from" placeholder="Enter From"/>
                     <InputField label="To" id="to" placeholder="Enter To" />
                   </div>
                   <textarea
@@ -237,4 +237,4 @@ const TaskList = () => {
   );
 };
 
-export default TaskList;
+export default ExportAdvanceList;
