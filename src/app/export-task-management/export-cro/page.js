@@ -50,7 +50,8 @@ const exporcro = () => {
               <InputField label="Stuffing Location" id="stuffingLocation" placeholder="Lorem" />
               <InputField label="Validity" id="validity" placeholder="Lorem" />
 
-              <div className="p-6 border-1 rounded-md border-blue-300 mt-6">
+<div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+              <div className="rounded-md bg-white p-6">
                 <h1 className="font-semibold">Fetch Local Charge</h1>
                 <div className="mt-6">
                   <table className="min-w-full bg-white border border-gray-200">
@@ -73,7 +74,7 @@ const exporcro = () => {
                   </table>
                 </div>
               </div>
-
+              </div>
               <div className="flex justify-end mt-4">
                 <button className="bg-blue-500 text-white px-6 h-10 text-sm ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer">
                   Allot Container

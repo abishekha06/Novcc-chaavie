@@ -53,35 +53,12 @@ const billoflading = () => {
             </div>
           </div>
 
-          <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
-            <div className="bg-white rounded-lg pb-6 pt-3">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr>
-                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Fech Exchange Rate</th>
-                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Add Exchange Rate</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.map((row, index) => (
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.fechExchangeRate}</td>
-                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.addExchangeRate}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
 
-          <div className="flex justify-end mt-4">
-            <button className="bg-blue-500 text-white px-4 h-8 text-xs ml-3 rounded-md hover:bg-blue-600 transition-all duration-200 cursor-pointer flex justify-center items-center gap-3">
-              <GoPlus /> Allot Container
-            </button>
-          </div>
+
+
 
           <div>
-            Aswanth
+            Table and Buttons 
           </div>
 
           <div className="flex justify-end mt-4">

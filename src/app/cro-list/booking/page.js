@@ -55,29 +55,31 @@ const booking = () => {
               <InputField label="Validity" id="validity" placeholder="Lorem" />
               <InputField label="Cargo Type" id="cargoType" placeholder="Lorem" />
               <InputField label="Ocean Freight" id="oceanFreight" placeholder="Lorem" />
-              <div className="p-6 border-1 rounded-md border-blue-300 mt-6">
-            <h1 className="font-semibold">Fetch Local Charge</h1>
-            <div className="mt-6">
-              <table className="min-w-full bg-white border border-gray-200">
-                <thead>
-                  <tr>
-                    <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200"></th>
-                    <th className="px-4 py-2 text-sm font-semibold border-b border-gray-200 text-blue-500">Unit Test</th>
-                    <th className="px-4 py-2 text-sm font-semibold border-b border-gray-200 text-blue-500">INR 100000</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableData.map((item) => (
-                    <tr key={item.id} className="hover:bg-gray-50">
-                      <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.name}</td>
-                      <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.unit}</td>
-                      <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+              <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+              <div className="rounded-md bg-white p-6">
+                <h1 className="font-semibold">Fetch Local Charge</h1>
+                <div className="mt-6">
+                  <table className="min-w-full bg-white border border-gray-200">
+                    <thead>
+                      <tr>
+                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200"></th>
+                        <th className="px-4 py-2 text-sm font-semibold border-b border-gray-200 text-blue-500">Unit Test</th>
+                        <th className="px-4 py-2 text-sm font-semibold border-b border-gray-200 text-blue-500">INR 100000</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tableData.map((item) => (
+                        <tr key={item.id} className="hover:bg-gray-50">
+                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.name}</td>
+                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.unit}</td>
+                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">{item.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
 

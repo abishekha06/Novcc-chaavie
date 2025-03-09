@@ -13,6 +13,12 @@ const exportinvoice = () => {
     { fechExchangeRate: "Date", addExchangeRate: "84.5" },
   ];
 
+  const tableData = [
+    { id: 1, chargeHead: "Material Cost", quantity: 10, rate: 1000, amount: 10000 },
+    { id: 2, chargeHead: "Labor Cost", quantity: 5, rate: 500, amount: 2500 },
+    { id: 3, chargeHead: "Labor Cost", quantity: 5, rate: 500, amount: 2500 },
+  ];
+
   return (
     <Layout>
       <div className='flex flex-col p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl '>
@@ -74,9 +80,47 @@ const exportinvoice = () => {
             </button>
           </div>
 
-          <div>
-            Aswanth
-          </div>
+          <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+  <div className="rounded-md bg-white p-2  pb-4">
+    <div className="">
+      <table className="min-w-full bg-white">
+        <thead>
+          <tr>
+            <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">SrNo</th>
+            <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Charge Head</th>
+            <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Quantity</th>
+            <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Rate</th>
+            <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((item, index) => (
+            <tr key={item.id} className="hover:bg-gray-50">
+              <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">{index + 1}</td>
+              <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                <input
+                  type="text"
+                  className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                  defaultValue={item.chargeHead}
+                />
+              </td>
+              <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                <input
+                  type="number"
+                  className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                  defaultValue={item.quantity}
+                />
+              </td>
+              <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">{item.rate}</td>
+              <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">{item.amount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 
           <div className="flex justify-end mt-4">
             <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
