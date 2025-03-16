@@ -80,7 +80,7 @@ const Sidebar = () => {
 
           <li className="mb-3">
             <Link
-              href="/export-advance-list"
+              href="/export-advance-lists"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
                 pathname === '/export-advance-list' ? 'text-pink-500' : 'text-white'
               }`}

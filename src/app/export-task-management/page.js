@@ -6,11 +6,12 @@ import Link from 'next/link';
 import { TiFilter } from "react-icons/ti";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import { RiArrowGoBackFill } from "react-icons/ri";
+import { RiArrowDownSLine, RiArrowGoBackFill } from "react-icons/ri";
 import { MdModeEdit } from "react-icons/md";
 import { CgEyeAlt } from "react-icons/cg";
 import { MdAssignmentAdd } from "react-icons/md";
 import InputField from '../../components/input-field';
+import InputField2 from '../../components/input-field2';
 
 
 const exporttaskmanagement = () => {
@@ -210,13 +211,47 @@ const exporttaskmanagement = () => {
                     </button>
                   </div>
                   <div className="bg-white p-6 rounded-md flex flex-col gap-2">
-                    <h1 className="font-semibold">Assign To</h1>
-                    <InputField label="Assign To" id="assignTo" placeholder="Enter name" />
-                    <div className='flex justify-end mt-4'>
-                    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
-                      Save
-                    </button>
-                  </div>
+
+
+                   <h1 className='font-semibold'>Assign to</h1>
+
+                    <div className="relative">
+                      <InputField2
+                
+                        id="assign_to"
+                        // value={selectedUser?.name}
+                        readOnly
+                        className="pr-10"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      />
+                      <div
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      >
+                        <RiArrowDownSLine className="text-gray-500" />
+                      </div>
+                      {/* {isDropdownOpen && (
+                        <div className="absolute z-10 mt-2 w-full bg-white border rounded-md shadow-lg max-h-40 overflow-auto">
+                          {names.map((user, index) => (
+                            <div
+                              key={index}
+                              className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                              onClick={() => handleSelect(user)}
+                            >
+                              {user.name}
+                            </div>
+                          ))}
+                        </div>
+                      )} */}
+                    </div>
+                    <div className="flex justify-end mt-4">
+                      <button
+                        // onClick={handleSave}
+                        className="bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer"
+                      >
+                        Save
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -8,6 +8,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import InputField from '../../components/input-field';
+import { GoPlus } from "react-icons/go";
+import { FaSync, FaTimesCircle } from "react-icons/fa";
 
 const ContainerAllotmentList = () => {
   const dummyData = [
@@ -48,6 +50,50 @@ const ContainerAllotmentList = () => {
     { label: "CRO Number", value: "CRO67890" },
     { label: "Date", value: "2023-10-01" },
   ];
+
+
+  const initialData = [
+    {
+      srNo: 1,
+      containerNo: "ABC123",
+      size: "20ft",
+      allotment: true,
+      shippingLine: "Maersk",
+      allotmentDate: "2023-10-01",
+      croNumber: "CRO12345",
+      dated: "2023-09-25",
+      validity: "30 days",
+    },
+    {
+      srNo: 2,
+      containerNo: "XYZ456",
+      size: "40ft",
+      allotment: false,
+      shippingLine: "COSCO",
+      allotmentDate: "2023-10-05",
+      croNumber: "CRO67890",
+      dated: "2023-09-30",
+      validity: "45 days",
+    },
+  ];
+
+
+   const [data, setData] = useState(initialData);
+  
+    const handleAllotmentChange = (index) => {
+      const updatedData = [...data];
+      updatedData[index].allotment = !updatedData[index].allotment;
+      setData(updatedData);
+    };
+  
+    const handleRemove = (index) => {
+      const updatedData = data.filter((row, i) => i !== index);
+      setData(updatedData);
+    };
+  
+
+
+  
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -183,13 +229,15 @@ const ContainerAllotmentList = () => {
         <Modal isOpen={isModalOpen3} onClose={closeModal3}>
           <div className='h-full w-full relative'>
             <div className='absolute inset-0 flex items-center justify-center'>
-              <div className='w-[54rem]'>
+              <div className='w-[60rem]'>
                 <div className='flex w-full justify-end mb-4'>
                   <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
                     <RiArrowGoBackFill />
                   </button>
                 </div>
-                <div className='bg-white p-6 rounded-md flex flex-col gap-4'>
+
+
+                <div className='bg-white p-6 rounded-md flex flex-col gap-4 h-[30rem]  overflow-auto custom-scrollbar2'>
                   <h1 className="text-xl font-semibold">Container Allotment</h1>
                     <InputField label="Task ID" id="taskId" placeholder="Enter Task ID" />
                   <div className='grid grid-cols-2 gap-4'>
@@ -200,6 +248,72 @@ const ContainerAllotmentList = () => {
                     <InputField label="CRO Number" id="croNumber" placeholder="Enter CRO Number" />
                     <InputField label="Date" id="date" placeholder="Enter Date" />
                   </div>
+
+  <div className="flex justify-end mt-4">
+                      <button className="bg-blue-500 text-white px-4 h-8 text-xs ml-3 rounded-md hover:bg-blue-600 transition-all duration-200 cursor-pointer flex justify-center items-center gap-3">
+                        <GoPlus /> Add New
+                      </button>
+                    </div>
+
+
+                        <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+                                <div className="bg-white rounded-lg p-4">
+                                  <table className="w-full border-collapse">
+                                    <thead>
+                                      <tr>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Sr No</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Container No</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Size</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Allotment</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Shipping Line</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Allotment Date</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">CRO Number</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Dated</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Validity</th>
+                                        <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Action</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {data.map((row, index) => (
+                                        <tr key={row.srNo} className="hover:bg-gray-50">
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.srNo}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.containerNo}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.size}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">
+                                            <input
+                                              type="checkbox"
+                                              checked={row.allotment}
+                                              onChange={() => handleAllotmentChange(index)}
+                                              className="form-checkbox h-4 w-4 text-blue-600"
+                                            />
+                                          </td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.shippingLine}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.allotmentDate}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.croNumber}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.dated}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">{row.validity}</td>
+                                          <td className="p-3 border-b border-gray-200 text-center text-xs">
+                                            <div className="flex justify-center space-x-2">
+                                              <button className="text-blue-500 hover:text-blue-600">
+                                                <FaSync className="h-4 w-4" />
+                                              </button>
+                                              <button
+                                                className="text-red-500 hover:text-red-600"
+                                                onClick={() => handleRemove(index)}
+                                              >
+                                                <FaTimesCircle className="h-4 w-4" />
+                                              </button>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+
+
+
                   <div className='flex justify-end gap-2'>
                     <button
                       className='bg-white border border-gray-300 text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-gray-200 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'
@@ -213,6 +327,9 @@ const ContainerAllotmentList = () => {
                       Save
                     </button>
                   </div>
+
+
+
                 </div>
               </div>
             </div>
