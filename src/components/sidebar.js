@@ -80,7 +80,7 @@ const Sidebar = () => {
 
           <li className="mb-3">
             <Link
-              href="/export-advance-lists"
+              href="/export-advance-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
                 pathname === '/export-advance-list' ? 'text-pink-500' : 'text-white'
               }`}
@@ -89,6 +89,31 @@ const Sidebar = () => {
               Export Advance List
             </Link>
           </li>
+
+          <li className="mb-3">
+            <Link
+              href="/tdr-list"
+              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
+                pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'
+              }`}
+            >
+              <FaFileInvoiceDollar className={pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'} />
+              TDR List
+            </Link>
+          </li>
+
+          <li className="mb-3">
+            <Link
+              href="/inventory-list"
+              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
+                pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'
+              }`}
+            >
+              <FaFileInvoiceDollar className={pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'} />
+              Inventory List
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </div>
