@@ -8,6 +8,9 @@ import {
   FaClipboardList,
   FaBox,
   FaFileInvoiceDollar,
+  FaFileAlt,
+  FaClipboardCheck,
+  FaWarehouse,
 } from 'react-icons/fa';
 
 const Sidebar = () => {
@@ -61,7 +64,7 @@ const Sidebar = () => {
                 pathname === '/cro-list' ? 'text-pink-500' : 'text-white'
               }`}
             >
-              <FaClipboardList className={pathname === '/cro-list' ? 'text-pink-500' : 'text-white'} />
+              <FaClipboardCheck className={pathname === '/cro-list' ? 'text-pink-500' : 'text-white'} />
               CRO List
             </Link>
           </li>
@@ -97,7 +100,7 @@ const Sidebar = () => {
                 pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'
               }`}
             >
-              <FaFileInvoiceDollar className={pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'} />
+              <FaFileAlt className={pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'} />
               TDR List
             </Link>
           </li>
@@ -109,11 +112,10 @@ const Sidebar = () => {
                 pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'
               }`}
             >
-              <FaFileInvoiceDollar className={pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'} />
+              <FaWarehouse className={pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'} />
               Inventory List
             </Link>
           </li>
-
         </ul>
       </nav>
     </div>

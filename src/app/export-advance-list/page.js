@@ -8,7 +8,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import InputField from '../../components/input-field';
 import { MdOutlineFileDownload } from "react-icons/md";
-import { IoSearch} from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 
 const ExportAdvanceList = () => {
   const dummyData = [
@@ -37,7 +37,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 4,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -45,7 +45,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 5,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -53,25 +53,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
-      taskId: "T54321",
-      importExport: "Import",
-      line: "Hapag-Lloyd",
-      date: "2023-10-03",
-      vesselName: "Vessel C",
-    },
-
-    {
-      id: 3,
-      taskId: "T54321",
-      importExport: "Import",
-      line: "Hapag-Lloyd",
-      date: "2023-10-03",
-      vesselName: "Vessel C",
-    },
-
-    {
-      id: 3,
+      id: 6,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -79,7 +61,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 7,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -87,7 +69,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 8,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -95,7 +77,7 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 9,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -103,7 +85,23 @@ const ExportAdvanceList = () => {
       vesselName: "Vessel C",
     },
     {
-      id: 3,
+      id: 10,
+      taskId: "T54321",
+      importExport: "Import",
+      line: "Hapag-Lloyd",
+      date: "2023-10-03",
+      vesselName: "Vessel C",
+    },
+    {
+      id: 11,
+      taskId: "T54321",
+      importExport: "Import",
+      line: "Hapag-Lloyd",
+      date: "2023-10-03",
+      vesselName: "Vessel C",
+    },
+    {
+      id: 12,
       taskId: "T54321",
       importExport: "Import",
       line: "Hapag-Lloyd",
@@ -136,60 +134,51 @@ const ExportAdvanceList = () => {
   const openModal4 = () => setIsModalOpen4(true);
   const closeModal4 = () => setIsModalOpen4(false);
 
-    // Dropdown states
-    const [isDropdown1Open, setIsDropdown1Open] = useState(false);
-    const [isDropdown2Open, setIsDropdown2Open] = useState(false);
-    const [selectedItem1, setSelectedItem1] = useState("Button 1"); // Track selected item for Dropdown 1
-    const [selectedItem2, setSelectedItem2] = useState("Button 2"); // Track selected item for Dropdown 2
-  
-    // Ref for dropdowns to detect clicks outside
-    const dropdown1Ref = useRef(null);
-    const dropdown2Ref = useRef(null);
-  
-    // Close dropdown when clicking outside
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (dropdown1Ref.current && !dropdown1Ref.current.contains(event.target)) {
-          setIsDropdown1Open(false);
-        }
-        if (dropdown2Ref.current && !dropdown2Ref.current.contains(event.target)) {
-          setIsDropdown2Open(false);
-        }
-      };
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, []);
-  
-    // Toggle dropdown visibility
-    const toggleDropdown1 = () => setIsDropdown1Open(!isDropdown1Open);
-    const toggleDropdown2 = () => setIsDropdown2Open(!isDropdown2Open);
-  
-    // Handle item selection for Dropdown 1
-    const handleSelectItem1 = (item) => {
-      setSelectedItem1(item);
-      setIsDropdown1Open(false);
+  const [isDropdown1Open, setIsDropdown1Open] = useState(false);
+  const [isDropdown2Open, setIsDropdown2Open] = useState(false);
+  const [selectedItem1, setSelectedItem1] = useState("Button 1");
+  const [selectedItem2, setSelectedItem2] = useState("Button 2");
+
+  const dropdown1Ref = useRef(null);
+  const dropdown2Ref = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdown1Ref.current && !dropdown1Ref.current.contains(event.target)) {
+        setIsDropdown1Open(false);
+      }
+      if (dropdown2Ref.current && !dropdown2Ref.current.contains(event.target)) {
+        setIsDropdown2Open(false);
+      }
     };
-  
-    // Handle item selection for Dropdown 2
-    const handleSelectItem2 = (item) => {
-      setSelectedItem2(item);
-      setIsDropdown2Open(false);
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, []);
+
+  const toggleDropdown1 = () => setIsDropdown1Open(!isDropdown1Open);
+  const toggleDropdown2 = () => setIsDropdown2Open(!isDropdown2Open);
+
+  const handleSelectItem1 = (item) => {
+    setSelectedItem1(item);
+    setIsDropdown1Open(false);
+  };
+
+  const handleSelectItem2 = (item) => {
+    setSelectedItem2(item);
+    setIsDropdown2Open(false);
+  };
 
   return (
     <Layout>
-      <div className='p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl'>
+      <div className='p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl flex flex-col'>
         <div className='h-fit flex flex-col justify-between'>
           <h1 className="text-xl font-semibold border-l-pink-800 border-l-8 pl-2.5">Export Advance List</h1>
           <div className='flex items-end flex-col'>
-
             <div className='flex items-center justify-between w-full mt-4'>
-
-            <div className="flex gap-2">
-                {/* Dropdown Button 1 */}
+              <div className="flex gap-2">
                 <div className="relative" ref={dropdown1Ref}>
                   <button
                     onClick={toggleDropdown1}
@@ -197,23 +186,15 @@ const ExportAdvanceList = () => {
                   >
                     {selectedItem1}
                     <svg
-                      className={`w-4 h-4 transition-transform ${
-                        isDropdown1Open ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform ${isDropdown1Open ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  {/* Dropdown Menu 1 */}
                   {isDropdown1Open && (
                     <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-sm shadow-lg z-10">
                       <ul>
@@ -232,7 +213,6 @@ const ExportAdvanceList = () => {
                   )}
                 </div>
 
-                {/* Dropdown Button 2 */}
                 <div className="relative" ref={dropdown2Ref}>
                   <button
                     onClick={toggleDropdown2}
@@ -240,23 +220,15 @@ const ExportAdvanceList = () => {
                   >
                     {selectedItem2}
                     <svg
-                      className={`w-4 h-4 transition-transform ${
-                        isDropdown2Open ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform ${isDropdown2Open ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  {/* Dropdown Menu 2 */}
                   {isDropdown2Open && (
                     <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-sm shadow-lg z-10">
                       <ul>
@@ -275,56 +247,44 @@ const ExportAdvanceList = () => {
                   )}
                 </div>
                 <button className='bg-blue-500/10 text-blue-600 hover:bg-blue-600/20 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-              <h1>Search</h1><IoSearch />
-            </button>
+                  <h1>Search</h1><IoSearch />
+                </button>
 
-                <button  className='bg-green-700 hover:bg-green-800 text-white  rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-              <h1>Generate EAL</h1>
-            </button>
+                <button className='bg-green-700 hover:bg-green-800 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+                  <h1>Generate EAL</h1>
+                </button>
 
-            <button onClick={openModal3}  className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-              <h1>Export tally sheet</h1>
-            </button>
+                <button onClick={openModal3} className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+                  <h1>Export tally sheet</h1>
+                </button>
 
-            <Modal isOpen={isModalOpen3} onClose={closeModal3}>
-          <div className='h-full w-full relative'>
-            <div className='absolute inset-0 flex items-center justify-center'>
-              <div className='w-fit'>
-                <div className='flex w-full justify-end mb-4'>
-                  <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
-                    <RiArrowGoBackFill />
-                  </button>
-                </div>
-                <div className='bg-white p-16 rounded-md flex items-center justify-center flex-col'>
-                  <h1 className="text-xl font-semibold mb-4">Please Upload Your Tally Sheet</h1>
-                  <button className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-              <h1>Upload tally sheet</h1>
-                 </button>
-                </div>
+                <Modal isOpen={isModalOpen3} onClose={closeModal3}>
+                  <div className='h-full w-full relative'>
+                    <div className='absolute inset-0 flex items-center justify-center'>
+                      <div className='w-fit'>
+                        <div className='flex w-full justify-end mb-4'>
+                          <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
+                            <RiArrowGoBackFill />
+                          </button>
+                        </div>
+                        <div className='bg-white p-16 rounded-md flex items-center justify-center flex-col'>
+                          <h1 className="text-xl font-semibold mb-4">Please Upload Your Tally Sheet</h1>
+                          <button className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+                            <h1>Upload tally sheet</h1>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Modal>
               </div>
-            </div>
-          </div>
-        </Modal>
-
-
-
-              </div>
-
-        
-
 
               <div className='flex gap-3'>
-                        <button className='bg-blue-500/10 text-blue-600 py-1 rounded-sm hover:bg-blue-600/20 p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-                          <h1>Download</h1><MdOutlineFileDownload />
-                        </button>
-                        <button onClick={openModal} className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
-                          <h1>Filter</h1><TiFilter />
-                        </button>
-                   </div>
-
-            
+                <button onClick={openModal} className='bg-gray-100 hover:bg-gray-200 rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+                  <h1>Filter</h1><TiFilter />
+                </button>
+              </div>
             </div>
-
 
             <div className='flex gap-0.5 my-2'>
               <button className='h-6 bg-gray-200 w-6 flex items-center justify-center hover:bg-gray-300 text-xs'><IoIosArrowBack /></button>
@@ -338,7 +298,6 @@ const ExportAdvanceList = () => {
           </div>
         </div>
 
-        {/* Filter Modal */}
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <div className='h-full w-full relative'>
             <div className='absolute top-32 right-14'>
@@ -367,46 +326,47 @@ const ExportAdvanceList = () => {
           </div>
         </Modal>
 
-        {/* Table */}
-        <div className="overflow-hidden overflow-y-auto h-auto scroll-smooth scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-200 custom-scrollbar">
-          <table className="min-w-full border-collapse border border-gray-200">
-            <thead>
-              <tr className="bg-gray-100 border-b border-gray-200">
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Vessel/Visit</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Container No</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Opr</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Shipping Status Code</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Eqp Type</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Load Status</th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-800">Pod</th>
-                <th className="px-4 py-2 text-sm font-semibold text-gray-800">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dummyData.map((item) => (
-                <tr key={item.id} className="hover:bg-gray-50 even:bg-gray-50">
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">{item.vesselName}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Container {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Opr {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Status {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Type {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Load {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200">Pod {item.id}</td>
-                  <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 flex space-x-2 justify-end">
-                    <button
-                      className="bg-blue-500/10 text-blue-600 px-3 py-1 rounded-sm hover:bg-blue-600/20 duration-200 cursor-pointer"
-                      onClick={openModal2}
-                    >
-                      View
-                    </button>
-                  </td>
+        <div className="overflow-y-auto flex-1 custom-scrollbar2">
+          
+            <table className="min-w-full border-collapse border border-gray-200">
+              <thead>
+                <tr className="bg-gray-100 border-b border-gray-200">
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Vessel/Visit</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Container No</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Opr</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Shipping Status Code</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Eqp Type</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Load Status</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Pod</th>
+                  <th className="px-4 py-2 text-center text-sm font-semibold text-gray-800">Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {dummyData.map((item) => (
+                  <tr key={item.id} className="hover:bg-gray-50 even:bg-gray-50">
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">{item.vesselName}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Container {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Opr {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Status {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Type {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Load {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">Pod {item.id}</td>
+                    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200 text-center">
+                      <button
+                        className="bg-blue-500/10 text-blue-600 px-3 py-1 rounded-sm hover:bg-blue-600/20 duration-200 cursor-pointer"
+                        onClick={openModal2}
+                      >
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+       
         </div>
 
-        {/* View Modal (Modal 2) */}
         <Modal isOpen={isModalOpen2} onClose={closeModal2}>
           <div className='h-full w-full relative'>
             <div className='absolute inset-0 flex items-center justify-center'>
@@ -431,40 +391,11 @@ const ExportAdvanceList = () => {
           </div>
         </Modal>
 
-
- 
-
-        {/* Approve Email Modal (Modal 4) */}
-        <Modal isOpen={isModalOpen4} onClose={closeModal4}>
-          <div className='h-full w-full relative'>
-            <div className='absolute inset-0 flex items-center justify-center'>
-              <div className='w-[54rem]'>
-                <div className='flex w-full justify-end mb-4'>
-                  <button onClick={closeModal4} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
-                    <RiArrowGoBackFill />
-                  </button>
-                </div>
-                <div className='bg-white p-6 rounded-md flex flex-col gap-4'>
-                  <h1 className="text-xl font-semibold">Approve Email</h1>
-                  <div className='grid grid-cols-2 gap-4'>
-                    <InputField label="From" id="from" placeholder="Enter From"/>
-                    <InputField label="To" id="to" placeholder="Enter To" />
-                  </div>
-                  <textarea
-                    className="w-full p-2 border border-gray-300 rounded-sm focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                    rows={4}
-                    placeholder="Enter your message"
-                  />
-                  <div className='flex justify-end'>
-                    <button className='bg-blue-500 text-white text-sm px-4 py-2 rounded-se-lg rounded-es-lg hover:bg-blue-600 transition-colors duration-200 flex-1 text-center max-w-[120px] cursor-pointer'>
-                      Approve
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Modal>
+        <div className="flex justify-end mt-5">
+          <button className='bg-blue-500/10 text-blue-600 py-2 rounded-sm hover:bg-blue-600/20 p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+            <h1>Download</h1><MdOutlineFileDownload />
+          </button>
+        </div>
       </div>
     </Layout>
   );
