@@ -282,9 +282,29 @@ const ExportAdvanceList = () => {
               <h1>Generate EAL</h1>
             </button>
 
-            <button  className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+            <button onClick={openModal3}  className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
               <h1>Export tally sheet</h1>
             </button>
+
+            <Modal isOpen={isModalOpen3} onClose={closeModal3}>
+          <div className='h-full w-full relative'>
+            <div className='absolute inset-0 flex items-center justify-center'>
+              <div className='w-fit'>
+                <div className='flex w-full justify-end mb-4'>
+                  <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
+                    <RiArrowGoBackFill />
+                  </button>
+                </div>
+                <div className='bg-white p-16 rounded-md flex items-center justify-center flex-col'>
+                  <h1 className="text-xl font-semibold mb-4">Please Upload Your Tally Sheet</h1>
+                  <button className='bg-blue-600 hover:bg-blue-700 text-white rounded-sm p-2 px-4 text-sm cursor-pointer w-fit flex items-center justify-center gap-2'>
+              <h1>Upload tally sheet</h1>
+                 </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal>
 
 
 
@@ -411,24 +431,8 @@ const ExportAdvanceList = () => {
           </div>
         </Modal>
 
-        {/* Approve EAL Modal (Modal 3) */}
-        <Modal isOpen={isModalOpen3} onClose={closeModal3}>
-          <div className='h-full w-full relative'>
-            <div className='absolute inset-0 flex items-center justify-center'>
-              <div className='w-[54rem]'>
-                <div className='flex w-full justify-end mb-4'>
-                  <button onClick={closeModal3} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
-                    <RiArrowGoBackFill />
-                  </button>
-                </div>
-                <div className='bg-white p-6 rounded-md'>
-                  <h1 className="text-xl font-semibold mb-4">Approve EAL</h1>
-                  {/* Blank Modal Content */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </Modal>
+
+ 
 
         {/* Approve Email Modal (Modal 4) */}
         <Modal isOpen={isModalOpen4} onClose={closeModal4}>
