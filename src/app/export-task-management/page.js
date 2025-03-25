@@ -153,12 +153,17 @@ const exporttaskmanagement = () => {
                     >
                       <MdAssignmentAdd />
                     </button>
+
+
                     <Link
                       className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
-                      href="/export-task-management/export-cro"
+                      href="/export-task-management/booking"
                     >
-                      Generate CRO
+                      View Booking
                     </Link>
+
+
+
                     <button
                       className="bg-green-500/10 text-green-600 px-3 py-1 rounded-sm hover:bg-green-600/20 duration-200 cursor-pointer"
                       onClick={openModal4}
