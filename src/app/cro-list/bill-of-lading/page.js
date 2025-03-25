@@ -8,6 +8,7 @@ import ProgressButton from "../../cro-list/components/progress-buttons";
 import { GoPlus } from "react-icons/go";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import Modal from '../../../components/modal';
+import { MdOutlineFileDownload } from 'react-icons/md';
 
 const billoflading = () => {
 
@@ -107,101 +108,18 @@ const billoflading = () => {
   return (
     <Layout>
       <div className='flex flex-col p-6 border-1 border-gray-200 h-full bg-white rounded-2xl shadow-xl '>
-        <div className='h-32 flex flex-col justify-between'>
+       
+       
+        <div className='min-h-32 flex flex-col justify-between'>
           <Progress />
           <ProgressButton />
         </div>
 
-        <div className="h-full p-2 overflow-y-scroll custom-scrollbar pt-6">
-          <div className="flex justify-end mt-4">
-            <button
-              className={`px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg transition-all duration-200 cursor-pointer w-24 ${
-                activePage2 === 'draft'
-                  ? 'bg-blue-500 text-white hover:bg-blue-600'
-                  : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-              }`}
-              onClick={() => setActivePage2('draft')}
-            >
-              Draft
-            </button>
-            <button
-              className={`px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg transition-all duration-200 cursor-pointer w-24 ${
-                activePage2 === 'final'
-                  ? 'bg-blue-500 text-white hover:bg-blue-600'
-                  : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-              }`}
-              onClick={() => setActivePage2('final')}
-            >
-              Final
-            </button>
-            <button
-              className={`px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg transition-all duration-200 cursor-pointer w-24 ${
-                activePage2 === 'print'
-                  ? 'bg-blue-500 text-white hover:bg-blue-600'
-                  : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-              }`}
-              onClick={() => setActivePage2('print')}
-            >
-              Print
-            </button>
-          </div>
+        <div className='flex justify-end py-4 h-fit p-2'><button className='bg-blue-500 text-white text-xs py-2 px-4 rounded-md'>Print</button></div>
 
-          {activePage2 === 'draft' && (
-            <div className="mt-4">
-              <div className="">
-                <InputField label="Customer Name" id="customerName" placeholder="Lorem" />
-              </div>
+        <div className="flex-1 p-2 overflow-y-scroll custom-scrollbar2">
 
-              <div className="grid grid-cols-2 mt-4 gap-12">
-                <div>
-                  <InputField label="CRO Number" id="croNumber" placeholder="Lorem" />
-                  <InputField label="Validity" id="validity" placeholder="Lorem" />
-                  <InputField label="Discharge Port" id="dischargePort" placeholder="Lorem" />
-                </div>
-
-                <div>
-                  <InputField label="Validity" id="validity2" placeholder="Lorem" />
-                  <InputField label="Cargo Type" id="cargoType" placeholder="Lorem" />
-                </div>
-              </div>
-
-              <div className="mt-7">
-                <div className="flex mb-6 gap-0.5">
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'container'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('container')}
-                  >
-                    Container Details
-                  </button>
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'cargo'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('cargo')}
-                  >
-                    Cargo Details
-                  </button>
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'billOfLading'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('billOfLading')}
-                  >
-                    Bill of Lading Details
-                  </button>
-                </div>
-
-                {activePage === 'container' && (
-                  <div>
-                    <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+        <div className="relative p-[1px] rounded-lg bg-gradient-to-r from-pink-400 to-blue-400">
                       <div className="rounded-md bg-white p-2 pb-4">
                         <div className="">
                           <table className="min-w-full bg-white">
@@ -324,6 +242,215 @@ const billoflading = () => {
                           </table>
                         </div>
                       </div>
+        </div>
+
+ <div className='flex justify-end py-4 h-fit'><button className='bg-blue-500 text-white text-xs py-2 px-4 rounded-md'>Generate BL</button></div>
+
+
+ <div class="flex gap-2">
+   
+    <button class="w-40 h-12 text-white bg-blue-500  font-semibold text-center inline-block relative -skew-x-12 transition-all duration-300 cursor-pointer  hover:opacity-90 hover:scale-105">
+      <span class="skew-x-12 block leading-[3rem]">BL 1</span>
+    </button>
+    
+   
+    <button class="w-40 h-12 text-gray-700 bg-gray-200  font-semibold text-center inline-block relative -skew-x-12 transition-all duration-300 cursor-pointer  hover:opacity-90 hover:scale-105">
+      <span class="skew-x-12 block leading-[3rem]">BL 2</span>
+    </button>
+  </div>
+
+  <div className='flex justify-between'>
+
+  <div class="flex gap-2 mt-4">
+   
+   <button class="w-24 h-6 text-xs text-white bg-blue-500  font-medium text-center inline-block relative -skew-x-12 transition-all duration-300 cursor-pointer  hover:opacity-90 hover:scale-105">
+     <span class="skew-x-12 block leading-[1.5rem]">Draft</span>
+   </button>
+   
+  
+   <button class="w-24 h-6 text-xs text-gray-700 bg-gray-200  font-medium text-center inline-block relative -skew-x-12 transition-all duration-300 cursor-pointer  hover:opacity-90 hover:scale-105">
+     <span class="skew-x-12 block leading-[1.5rem]">Final</span>
+   </button>
+ </div>
+
+ <div>
+ <button className='bg-blue-500 text-white text-xs py-2 px-4 rounded-md'>Uploading Shipping Bill</button>
+ </div>
+
+
+ </div> 
+
+       
+            <div className="">
+              <div className="">
+                <InputField label="Customer Name" id="customerName" placeholder="Lorem" />
+              </div>
+
+              <div className="grid grid-cols-2 mt-4 gap-12">
+                <div>
+                  <InputField label="CRO Number" id="croNumber" placeholder="Lorem" />
+                  <InputField label="Validity" id="validity" placeholder="Lorem" />
+                  <InputField label="Discharge Port" id="dischargePort" placeholder="Lorem" />
+                </div>
+
+                <div>
+                  <InputField label="Validity" id="validity2" placeholder="Lorem" />
+                  <InputField label="Cargo Type" id="cargoType" placeholder="Lorem" />
+                </div>
+              </div>
+
+              <div className="mt-7">
+                <div className="flex mb-6 gap-0.5">
+                  <button
+                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48  rounded-s-full ${
+                      activePage === 'container'
+                        ? 'bg-blue-500 text-white hover:bg-blue-600'
+                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
+                    }`}
+                    onClick={() => setActivePage('container')}
+                  >
+                    Container Details
+                  </button>
+                  <button
+                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
+                      activePage === 'cargo'
+                        ? 'bg-blue-500 text-white hover:bg-blue-600'
+                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
+                    }`}
+                    onClick={() => setActivePage('cargo')}
+                  >
+                    Cargo Details
+                  </button>
+                  <button
+                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 rounded-e-full ${
+                      activePage === 'billOfLading'
+                        ? 'bg-blue-500 text-white hover:bg-blue-600'
+                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
+                    }`}
+                    onClick={() => setActivePage('billOfLading')}
+                  >
+                    Bill of Lading Details
+                  </button>
+                </div>
+
+                {activePage === 'container' && (
+                  <div>
+                    <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
+                      <div className="rounded-md bg-white p-2 pb-4">
+                        <div className="">
+                          <table className="min-w-full bg-white">
+                            <thead>
+                              <tr>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Sr No</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Container No</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Size/Type</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Seal No</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Package</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Gross Weight (KGS)</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Net Weight (KGS)</th>
+                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {rows.map((row, index) => (
+                                <tr key={row.id} className="hover:bg-gray-50">
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">{index + 1}</td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                                    <input
+                                      type="text"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.containerNo}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, containerNo: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                                    <input
+                                      type="text"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.sizeType}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, sizeType: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                                    <input
+                                      type="text"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.sealNo}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, sealNo: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                                    <input
+                                      type="text"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.package}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, package: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
+                                    <input
+                                      type="number"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.grossWeight}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, grossWeight: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center h-12">
+                                    <input
+                                      type="number"
+                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
+                                      placeholder="Type Here"
+                                      value={row.netWeight}
+                                      onChange={(e) => {
+                                        const updatedRows = rows.map((r) =>
+                                          r.id === row.id ? { ...r, netWeight: e.target.value } : r
+                                        );
+                                        setRows(updatedRows);
+                                      }}
+                                    />
+                                  </td>
+
+                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center flex gap-2 h-12 items-center justify-center">
+                                         <button  className='bg-blue-300 text-blue-700 rounded-md h-8 px-4 text-xs hover:opacity-85 cursor-pointer'>Edit</button>
+                                         <button  className='bg-red-200 text-red-700 rounded-md h-8 px-4 text-xs hover:opacity-85 cursor-pointer'>Delete</button>
+                                  </td>
+
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -373,343 +500,176 @@ const billoflading = () => {
 
                 {activePage === 'billOfLading' && (
                   <div>
-                    <h2>Bill of Lading Details Page</h2>
-                  </div>
-                )}
-              </div>
-
-              <div className="flex justify-end mt-4">
-                <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
-                  Save
-                </button>
-                <button className="bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400 px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg  transition-all duration-200 cursor-pointer w-24">
-                  Submit
-                </button>
-              </div>
-            </div>
-          )}
-
-          {activePage2 === 'final' && (
-            <div className="mt-4">
-              <div className="">
-                <InputField label="Customer Name" id="customerName" placeholder="Lorem" />
-              </div>
-
-              <div className="grid grid-cols-2 mt-4 gap-12">
-                <div>
-                  <InputField label="CRO Number" id="croNumber" placeholder="Lorem" />
-                  <InputField label="Validity" id="validity" placeholder="Lorem" />
-                  <InputField label="Discharge Port" id="dischargePort" placeholder="Lorem" />
-                </div>
-
-                <div>
-                  <InputField label="Validity" id="validity2" placeholder="Lorem" />
-                  <InputField label="Cargo Type" id="cargoType" placeholder="Lorem" />
-                </div>
-              </div>
-
-              <div className="mt-7">
-                <div className="flex mb-6 gap-0.5">
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'container'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('container')}
-                  >
-                    Container Details
-                  </button>
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'cargo'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('cargo')}
-                  >
-                    Cargo Details
-                  </button>
-                  <button
-                    className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-48 ${
-                      activePage === 'billOfLading'
-                        ? 'bg-blue-500 text-white hover:bg-blue-600'
-                        : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                    }`}
-                    onClick={() => setActivePage('billOfLading')}
-                  >
-                    Bill of Lading Details
-                  </button>
-                </div>
-
-                {activePage === 'container' && (
-                  <div>
-                    <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
-                      <div className="rounded-md bg-white p-2 pb-4">
-                        <div className="">
-                          <table className="min-w-full bg-white">
-                            <thead>
-                              <tr>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Sr No</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Select</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Container No</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Size/Type</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Seal No</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Package</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Gross Weight (KGS)</th>
-                                <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Net Weight (KGS)</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {containerData.map((item, index) => (
-                                <tr key={item.id} className="hover:bg-gray-50">
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">{index + 1}</td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="checkbox"
-                                      className="form-checkbox h-4 w-4 text-blue-600"
-                                      defaultChecked={item.selected}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="text"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.containerNo}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="text"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.sizeType}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="text"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.sealNo}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="text"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.package}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="number"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.grossWeight}
-                                    />
-                                  </td>
-                                  <td className="px-4 text-sm text-gray-700 border-b border-gray-200 text-center">
-                                    <input
-                                      type="number"
-                                      className="w-full px-2 py-2 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
-                                      defaultValue={item.netWeight}
-                                    />
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {activePage === 'cargo' && (
-                  <div>
-                    <h2>Cargo Details Page</h2>
-                  </div>
-                )}
-
-                {activePage === 'billOfLading' && (
-                  <div>
-                    <h2>Bill of Lading Details Page</h2>
-                  </div>
-                )}
-              </div>
-
-              <div className="flex justify-end mt-4">
-                <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
-                  Save
-                </button>
-                <button className="bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400 px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg  transition-all duration-200 cursor-pointer w-24">
-                  Submit
-                </button>
-              </div>
-            </div>
-          )}
-
-          {activePage2 === 'print' && (
-            <div>
-              <div className="flex mb-6">
-                <button
-                  className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-40 ${
-                    activePage3 === 'pending'
-                      ? 'bg-blue-500 text-white hover:bg-blue-600'
-                      : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                  }`}
-                  onClick={() => setActivePage3('pending')}
-                >
-                  Pending to Print
-                </button>
-                <button
-                  className={`px-6 h-8 text-xs transition-all duration-200 cursor-pointer w-40 ${
-                    activePage3 === 'printed'
-                      ? 'bg-blue-500 text-white hover:bg-blue-600'
-                      : 'bg-gray-200 text-gray-800 hover:bg-blue-200'
-                  }`}
-                  onClick={() => setActivePage3('printed')}
-                >
-                  Printed
-                </button>
-              </div>
-
-              {activePage3 === 'pending' && (
-                <div className="mt-7">
-                  <table className="min-w-full bg-white border border-gray-200">
-                    <thead>
-                      <tr>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Bill of Lading</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Load Port</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Discharge Port</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Customer Name</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tableData.map((row) => (
-                        <tr key={row.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            <button
-                              className="text-blue-500 hover:text-blue-700 focus:outline-none"
-                              onClick={() => setIsModalOpen(true)}
-                            >
-                              {row.billOfLading}
-                            </button>
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.loadPort}
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.dischargePort}
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.customerName}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-<Modal isOpen={isModalOpen} onClose={closeModal}>
-
-<div className='h-full w-full relative'>
-<div className='absolute inset-0 flex justify-center pt-10 '>
-
-<div className='flex pr-4'>
-      <button onClick={closeModal} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
-        <RiArrowGoBackFill />
-      </button>
-    </div>
-
-  <div className='h-[90%] w-[30rem]  bg-white overflow-hidden '>
-     <div className='h-full flex items-center justify-center'>
-      <img
-        src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-        alt="Bill of Lading"
-        className='max-w-full max-h-full'
-      />
-    </div>
 
 
-  </div>
-</div>
+<div>
+  <table className="w-full border-collapse">
+    <colgroup>
+      <col className="w-1/3" />
+      <col className="w-1/3" />
+      <col className="w-1/3" />
+    </colgroup>
+    
+    <thead>
+      <tr className="bg-gray-100">
+        <th className="border border-gray-300 p-2 text-left font-semibold text-base">Shipper</th>
+        <th className="border border-gray-300 p-2 text-left font-semibold text-base">Consignee</th>
+        <th className="border border-gray-300 p-2 text-left font-semibold text-base">Notify</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 p-0">
+          <textarea
+            placeholder="Type here"
+            className="w-full p-2 border-0 h-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+          />
+        </td>
+        <td className="border border-gray-300 p-0">
+          <textarea
+            placeholder="Type here"
+            className="w-full p-2 border-0 h-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+          />
+        </td>
+        <td className="border border-gray-300 p-0">
+          <textarea
+            placeholder="Type here"
+            className="w-full p-2 border-0 h-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td className="border border-gray-300 p-2">
+          <div className="font-medium">Marks</div>
+        </td>
+        <td className="border border-gray-300 p-2"></td>
+        <td className="border border-gray-300 p-2">
+          <table className="w-full">
+            <tr>
+              <td className="text-center">Gross Weight</td>
+              <td className="text-center">Net Weight</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td className="border border-gray-300 p-0 h-36"></td>
+        <td className="border border-gray-300 p-0 h-36">
+          <table className="w-full h-full">
+            <tr className="h-1/3">
+              <td className=" p-2">Freight Terms</td>
+              <td className="border-l border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                />
+              </td>
+            </tr>
+            <tr className="h-1/3">
+              <td className="border-t border-gray-300 p-2">Free Days</td>
+              <td className="border-t border-l  border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                />
+              </td>
+            </tr>
+            <tr className="h-1/3">
+              <td colSpan={2} className="border-t border-gray-300"></td>
+            </tr>
+          </table>
+        </td>
+        <td className="border border-gray-300 p-0 h-36">
+          <table className="w-full h-full">
+            <tr className="h-1/3">
+              <td className="border-b border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center" 
+                />
+              </td>
+              <td className="border-b border-l border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center" 
+                />
+              </td>
+            </tr>
+            <tr className="h-1/3">
+              <td className="border-b border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center" 
+                />
+              </td>
+              <td className="border-b border-l border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center" 
+                />
+              </td>
+            </tr>
+            <tr className="h-1/3">
+              <td className="p-2 text-center">Total Packages</td>
+              <td className="border-l border-gray-300 p-0">
+                <input 
+                  type="text" 
+                  className="w-full h-full p-2 border-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-center" 
+                />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-</Modal>
 
+
+
+
+
+
+
+                    
+                  </div>
+                )}
+              </div>
+
+             <div className="flex justify-between mt-4">
+             
+             <div className='flex gap-2'>
+             
+               <button className='text-xs px-6 h-8 rounded-md text-white bg-blue-500 hover:bg-blue-600  transition-all duration-200 cursor-pointer flex items-center justify-center gap-2'>Draft BL <MdOutlineFileDownload /></button>
               
-                </div>
-              )}
-
-              {activePage3 === 'printed' && (
-                <div className="mt-7">
-                  <table className="min-w-full bg-white border border-gray-200">
-                    <thead>
-                      <tr>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Bill of Lading</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Date</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Load Port</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Discharge Port</th>
-                        <th className="px-4 py-2 text-sm font-semibold text-gray-700 border-b border-gray-200">Customer Name</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tableData.map((row) => (
-                        <tr key={row.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            <button
-                              className="text-blue-500 hover:text-blue-700 focus:outline-none"
-                              onClick={() => setIsModalOpen(true)}
-                            >
-                              {row.billOfLading}
-                            </button>
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.date}
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.loadPort}
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.dischargePort}
-                          </td>
-                          <td className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200 text-center">
-                            {row.customerName}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-
-                  <Modal isOpen={isModalOpen} onClose={closeModal}>
-
-<div className='h-full w-full relative'>
-<div className='absolute inset-0 flex justify-center pt-10 '>
-
-<div className='flex pr-4'>
-      <button onClick={closeModal} className='bg-white h-10 w-10 rounded-full cursor-pointer flex items-center justify-center'>
-        <RiArrowGoBackFill />
-      </button>
-    </div>
-
-  <div className='h-[90%] w-[30rem]  bg-white overflow-hidden '>
-     <div className='h-full flex items-center justify-center'>
-      <img
-        src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-        alt="Bill of Lading"
-        className='max-w-full max-h-full'
-      />
-    </div>
+             
+             </div>
+             
+             <div>
+             <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
+               Save
+             </button>
+             <button className="bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400 px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg  transition-all duration-200 cursor-pointer w-24">
+               Submit
+             </button>
+             </div>
+             </div>
 
 
-  </div>
-</div>
-</div>
-
-</Modal>
-                </div>
-              )}
             </div>
-          )}
+     
+          
+
+
+
+
         </div>
+
+
       </div>
     </Layout>
   );
