@@ -1,41 +1,46 @@
 "use client";
 
-import { useState } from "react"; 
+import { useState } from "react"; // Import useState
 import InputField from "../../../components/input-field";
 import Layout from "../../../components/layout";
-import Progress from "../../cro-list/components/progress";
-import ProgressButton from "../../cro-list/components/progress-buttons";
+import Progress from "../components/progress";
+import ProgressButton from "../components/progress-buttons";
 
-const PortIn = () => {
-  
-  const [data, setData] = useState([
-    {
-      srNo: 1,
-      containerNo: "ABC123",
-      size: "20ft",
-      shippingLine: "Maersk",
-      depotOutDate: "2023-10-01",
-      croNumber: "CRO12345",
-      portIn: true, 
-      portDate: "2023-10-05",
-    },
-    {
-      srNo: 2,
-      containerNo: "XYZ456",
-      size: "40ft",
-      shippingLine: "COSCO",
-      depotOutDate: "2023-10-02",
-      croNumber: "CRO67890",
-      portIn: false, 
-      portDate: "2023-10-06",
-    },
-  ]);
+// Initial data
+const initialData = [
+  {
+    srNo: 1,
+    containerNo: "ABC123",
+    size: "20ft",
+    shippingLine: "Maersk",
+    depotOut: true,
+    depotOutDate: "2023-10-01",
+    croNumber: "CRO12345",
+    dated: "2023-09-25",
+    validity: "30 days",
+  },
+  {
+    srNo: 2,
+    containerNo: "ABC123",
+    size: "20ft",
+    shippingLine: "Maersk",
+    depotOut: false,
+    depotOutDate: "2023-10-01",
+    croNumber: "CRO12345",
+    dated: "2023-09-25",
+    validity: "30 days",
+  },
+];
 
-  
-  const handleCheckboxChange = (index) => {
-    const updatedData = [...data]; 
-    updatedData[index].portIn = !updatedData[index].portIn; 
-    setData(updatedData); 
+const Stuffing = () => {
+  // State to manage the table data
+  const [data, setData] = useState(initialData);
+
+  // Function to handle checkbox change
+  const handleDepotOutChange = (index) => {
+    const updatedData = [...data]; // Create a copy of the data
+    updatedData[index].depotOut = !updatedData[index].depotOut; // Toggle the checkbox state
+    setData(updatedData); // Update the state
   };
 
   return (
@@ -47,7 +52,7 @@ const PortIn = () => {
         </div>
 
         <div className="h-full p-2 overflow-y-scroll custom-scrollbar pt-6">
-          <div className="">
+          <div>
             <InputField label="Customer Name" id="customerName" placeholder="Lorem" />
           </div>
 
@@ -65,6 +70,7 @@ const PortIn = () => {
             </div>
           </div>
 
+          {/* Table */}
           <div className="relative p-[1px] rounded-lg mt-6 bg-gradient-to-r from-pink-400 to-blue-400">
             <div className="bg-white rounded-lg p-4">
               <table className="w-full border-collapse">
@@ -74,10 +80,11 @@ const PortIn = () => {
                     <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Container No</th>
                     <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Size</th>
                     <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Shipping Line</th>
+                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Depot Out</th>
                     <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Depot Out Date</th>
                     <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">CRO Number</th>
-                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Port In</th>
-                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Port Date</th>
+                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Dated</th>
+                    <th className="p-3 border-b border-gray-200 text-center text-xs font-semibold">Validity</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -87,17 +94,18 @@ const PortIn = () => {
                       <td className="p-3 border-b border-gray-200 text-center text-xs">{row.containerNo}</td>
                       <td className="p-3 border-b border-gray-200 text-center text-xs">{row.size}</td>
                       <td className="p-3 border-b border-gray-200 text-center text-xs">{row.shippingLine}</td>
-                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.depotOutDate}</td>
-                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.croNumber}</td>
                       <td className="p-3 border-b border-gray-200 text-center text-xs">
                         <input
                           type="checkbox"
-                          checked={row.portIn}
-                          onChange={() => handleCheckboxChange(index)}
+                          checked={row.depotOut}
+                          onChange={() => handleDepotOutChange(index)}
                           className="form-checkbox h-4 w-4 text-blue-600"
                         />
                       </td>
-                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.portDate}</td>
+                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.depotOutDate}</td>
+                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.croNumber}</td>
+                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.dated}</td>
+                      <td className="p-3 border-b border-gray-200 text-center text-xs">{row.validity}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -109,15 +117,14 @@ const PortIn = () => {
             <button className="bg-blue-500 text-white px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg hover:bg-blue-600 transition-all duration-200 cursor-pointer w-24">
               Save
             </button>
-            <button className="bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400 px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg  transition-all duration-200 cursor-pointer w-24">
+            <button className="bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-100 hover:border-gray-400 px-6 h-8 text-xs ml-3 rounded-es-lg rounded-se-lg transition-all duration-200 cursor-pointer w-24">
               Submit
             </button>
           </div>
-
         </div>
       </div>
     </Layout>
   );
 };
 
-export default PortIn;
+export default Stuffing;

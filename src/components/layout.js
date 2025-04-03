@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <Sidebar />
 
 
-      <div className="flex-1 p-8 bg-gray-100">
+      <div className="flex-1 p-8 bg-gray-100 min-w-96">
         {children}
       </div>
     </div>

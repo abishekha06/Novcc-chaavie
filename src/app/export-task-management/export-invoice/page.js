@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import InputField from "../../../components/input-field";
 import Layout from "../../../components/layout";
-import Progress from "../../cro-list/components/progress";
-import ProgressButton from "../../cro-list/components/progress-buttons";
+import Progress from "../components/progress";
+import ProgressButton from "../components/progress-buttons";
 import { GoPlus } from "react-icons/go";
 import { MdOutlineFileDownload } from "react-icons/md";
 

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Layout from "../../../components/layout";
-import Progress from "../../cro-list/components/progress";
-import ProgressButton from "../../cro-list/components/progress-buttons";
+import Progress from "../components/progress";
+import ProgressButton from "../components/progress-buttons";
 import InputField from '../../../components/input-field';
 
 

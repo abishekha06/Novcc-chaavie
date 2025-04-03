@@ -17,7 +17,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-64 bg-blue-950 text-white p-4">
+    <div className="min-w-64 max-w-64  bg-blue-950 text-white p-4">
       <h1 className="text-lg font-medium mb-6 bg-white/10 p-2 rounded-md">Export</h1>
       <nav>
         <ul>
