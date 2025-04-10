@@ -10,6 +10,9 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 import InputField from '../../components/input-field';
 import SvgBack from '../../components/icons/Back';
 
+// npm install -g @svgr/cli
+// svgr RestartIcon.svg --out-dir ./icons
+
 function App() {
   return <RestartIcon />;
 }
