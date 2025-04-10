@@ -8,6 +8,12 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiArrowGoBackFill } from "react-icons/ri";
 import InputField from '../../components/input-field';
+import SvgBack from '../../components/icons/Back';
+
+function App() {
+  return <RestartIcon />;
+}
+
 
 const CroList = () => {
   const dummyData = [
@@ -85,7 +91,7 @@ const CroList = () => {
             <div className='absolute top-32 right-14'>
               <div className='flex justify-end'>
                 <button onClick={closeModal} className='bg-white h-10 w-10 rounded-full cursor-pointer flex justify-center items-center'>
-                  <RiArrowGoBackFill />
+                  <SvgBack />
                 </button>
               </div>
               <div className='bg-white rounded-xl my-4 p-4 grid grid-cols-3 lg:grid-cols-6 gap-2'>
