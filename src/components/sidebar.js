@@ -1,125 +1,161 @@
 "use client";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import {
-  FaHome,
-  FaList,
-  FaTasks,
-  FaClipboardList,
-  FaBox,
-  FaFileInvoiceDollar,
-  FaFileAlt,
-  FaClipboardCheck,
-  FaWarehouse,
-} from 'react-icons/fa';
+import Link from "next/link";
+import SvgTdr from "../components/icons/Tdr";
+import SvgCro from "../components/icons/Cro";
+import SvgInventory from "../components/icons/Inventory";
+import SvgExportTask from "../components/icons/ExportTask";
+import SvgContainer from "../components/icons/Container";
+import { usePathname } from "next/navigation";
+import { IoIosArrowDown } from "react-icons/io";
+import SvgExport from '../components/icons/Export';
+
+import { FaHome } from "react-icons/fa";
 
 const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="min-w-64 max-w-64  bg-blue-950 text-white p-4">
-      <h1 className="text-lg font-medium mb-6 bg-white/10 p-2 rounded-md">Export</h1>
+    <div className="min-w-64 max-w-64 bg-blue-950 text-white p-4">
+
+<div className="bg-white/10 mb-6  flex justify-between items-center px-4 py-2 rounded-md">
+<div className="flex items-center gap-2">
+<div className="h-8 w-8 bg-white border-2 border-pink-500 rounded flex items-center justify-center">
+  <SvgExport className="w-5 h-5 text-pink-500"/>
+</div>
+      <h1 className="text-lg font-medium rounded-md">
+        Export
+      </h1>
+</div>
+
+<div>
+<IoIosArrowDown />
+</div>
+
+</div>
+
+
       <nav>
         <ul>
-          <li className="mb-3">
-            <Link
-              href="/"
-              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/' ? 'text-pink-500' : 'text-white'
-              }`}
-            >
-              <FaHome className={pathname === '/' ? 'text-pink-500' : 'text-white'} />
-              Home
-            </Link>
-          </li>
-
-          <li className="mb-3">
-            <Link
-              href="/quote-list"
-              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/quote-list' ? 'text-pink-500' : 'text-white'
-              }`}
-            >
-              <FaList className={pathname === '/quote-list' ? 'text-pink-500' : 'text-white'} />
-              Quote List
-            </Link>
-          </li>
-
-          <li className="mb-3">
-            <Link
-              href="/export-task-management"
-              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/export-task-management' ? 'text-pink-500' : 'text-white'
-              }`}
-            >
-              <FaTasks className={pathname === '/export-task-management' ? 'text-pink-500' : 'text-white'} />
-              Export Task Management
-            </Link>
-          </li>
-
-          <li className="mb-3">
+          <li className="mb-2">
             <Link
               href="/cro-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/cro-list' ? 'text-pink-500' : 'text-white'
+                pathname === "/cro-list" ? "text-pink-500" : "text-white"
               }`}
             >
-              <FaClipboardCheck className={pathname === '/cro-list' ? 'text-pink-500' : 'text-white'} />
-              CRO List
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgCro active={pathname === "/cro-list"} className="w-4 h-4" />
+              </div>
+              <h1>CRO List</h1>
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-2">
+            <Link
+              href="/export-task-management"
+              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
+                pathname === "/export-task-management"
+                  ? "text-pink-500"
+                  : "text-white"
+              }`}
+            >
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgExportTask className="" />
+              </div>
+              <h1>Export Task Management</h1>
+            </Link>
+          </li>
+
+          <li className="mb-2">
             <Link
               href="/container-allotment-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/container-allotment-list' ? 'text-pink-500' : 'text-white'
+                pathname === "/container-allotment-list"
+                  ? "text-pink-500"
+                  : "text-white"
               }`}
             >
-              <FaBox className={pathname === '/container-allotment-list' ? 'text-pink-500' : 'text-white'} />
-              Container Allotment List
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgContainer className="" />
+              </div>
+              <h1>Container Allotment List</h1>
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-2">
             <Link
               href="/export-advance-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/export-advance-list' ? 'text-pink-500' : 'text-white'
+                pathname === "/export-advance-list"
+                  ? "text-pink-500"
+                  : "text-white"
               }`}
             >
-              <FaFileInvoiceDollar className={pathname === '/export-advance-list' ? 'text-pink-500' : 'text-white'} />
-              Export Advance List
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgInventory
+                  active={pathname === "/export-advance-list"}
+                  className=""
+                />
+              </div>
+              <h1>Export Advance List</h1>
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-2">
             <Link
               href="/tdr-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'
+                pathname === "/tdr-list" ? "text-pink-500" : "text-white"
               }`}
             >
-              <FaFileAlt className={pathname === '/tdr-list' ? 'text-pink-500' : 'text-white'} />
-              TDR List
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgTdr
+                  active={pathname === "/tdr-list"}
+                  className=""
+                />
+              </div>
+              <h1>TDR List</h1>
             </Link>
           </li>
 
-          <li className="mb-3">
+          <li className="mb-2">
             <Link
               href="/inventory-list"
               className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
-                pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'
+                pathname === "/inventory-list" ? "text-pink-500" : "text-white"
               }`}
             >
-              <FaWarehouse className={pathname === '/inventory-list' ? 'text-pink-500' : 'text-white'} />
-              Inventory List
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgInventory
+                  active={pathname === "/inventory-list"}
+                  className=""
+                />
+              </div>
+              <h1>Inventory</h1>
             </Link>
           </li>
+
+          {/* <li className="mb-2">
+            <Link
+              href="/"
+              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
+                pathname === "/" ? "text-pink-500" : "text-white"
+              }`}
+            >
+              <div className="flex items-center justify-center h-7 w-7">
+                <FaHome
+                  className={` ${
+                    pathname === "/" ? "text-pink-500" : "text-white"
+                  }`}
+                />
+              </div>
+              <h1>Home</h1>
+            </Link>
+          </li> */}
         </ul>
       </nav>
     </div>
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
