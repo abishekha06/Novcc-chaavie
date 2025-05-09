@@ -2,6 +2,7 @@
 import { MdOutlineSettings } from "react-icons/md";
 import SvgExport from '../components/icons/Export';
 import SvgJodac from '../components/icons/Jodac';
+import SvgImporticon from "./icons/Importicon";
 
 const Mainside = () => {
     return (
@@ -12,7 +13,7 @@ const Mainside = () => {
            <SvgJodac />
         </div>
              
-              <div className="h-10 w-10 rounded-full bg-pink-800 flex items-center justify-center"><SvgExport className="text-white w-6 h-6" /></div>
+              <div className="h-10 w-10 rounded-full bg-pink-800 flex items-center justify-center"><SvgImporticon className="text-white w-6 h-6" /></div>
       </div>
 
         <div className="justify-between items-center flex flex-col">

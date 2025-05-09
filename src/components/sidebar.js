@@ -7,35 +7,49 @@ import SvgExportTask from "../components/icons/ExportTask";
 import SvgContainer from "../components/icons/Container";
 import { usePathname } from "next/navigation";
 import { IoIosArrowDown } from "react-icons/io";
-import SvgExport from '../components/icons/Export';
+import SvgExport from "../components/icons/Export";
+import SvgImportmenu from "../components/icons/Importmenu";
 
 import { FaHome } from "react-icons/fa";
+import SvgImporticon from "../components/icons/Importicon";
 
 const Sidebar = () => {
   const pathname = usePathname();
 
   return (
     <div className="min-w-64 max-w-64 bg-blue-950 text-white p-4">
+      <div className="bg-white/10 mb-6  flex justify-between items-center px-4 py-2 rounded-md">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 bg-white border-2 border-pink-500 rounded flex items-center justify-center">
+            <SvgImporticon className="w-5 h-5 text-pink-500" fill="#EC4899" />
+          </div>
+          <h1 className="text-lg font-medium rounded-md">Export</h1>
+        </div>
 
-<div className="bg-white/10 mb-6  flex justify-between items-center px-4 py-2 rounded-md">
-<div className="flex items-center gap-2">
-<div className="h-8 w-8 bg-white border-2 border-pink-500 rounded flex items-center justify-center">
-  <SvgExport className="w-5 h-5 text-pink-500"/>
-</div>
-      <h1 className="text-lg font-medium rounded-md">
-        Export
-      </h1>
-</div>
-
-<div>
-<IoIosArrowDown />
-</div>
-
-</div>
-
+        <div>
+          <IoIosArrowDown />
+        </div>
+      </div>
 
       <nav>
         <ul>
+          <li className="mb-2">
+            <Link
+              href="/cro-list"
+              className={`flex items-center gap-2 hover:text-gray-400 text-xs ${
+                pathname === "/cro-list" ? "text-pink-500" : "text-white"
+              }`}
+            >
+              <div className="flex items-center justify-center h-7 w-7">
+                <SvgImportmenu
+                  active={pathname === "/cro-list"}
+                  className="w-4 h-4"
+                />
+              </div>
+              <h1>CRO List</h1>
+            </Link>
+          </li>
+
           <li className="mb-2">
             <Link
               href="/cro-list"
@@ -109,10 +123,7 @@ const Sidebar = () => {
               }`}
             >
               <div className="flex items-center justify-center h-7 w-7">
-                <SvgTdr
-                  active={pathname === "/tdr-list"}
-                  className=""
-                />
+                <SvgTdr active={pathname === "/tdr-list"} className="" />
               </div>
               <h1>TDR List</h1>
             </Link>
